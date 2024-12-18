@@ -1,0 +1,48 @@
+﻿@model WebApplication20.Models.SinhVien
+
+@{
+    ViewData["Title"] = "Chỉnh sửa Sinh Viên";
+}
+
+<h2>Chỉnh sửa Sinh Viên</h2>
+
+<form asp-action="Edit" enctype="multipart/form-data">
+    @Html.HiddenFor(model => model.MaSV)
+    <div class="form-group">
+        <label asp-for="HoTen"></label>
+        <input asp-for="HoTen" class="form-control" />
+        <span asp-validation-for="HoTen" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="GioiTinh"></label>
+        <input asp-for="GioiTinh" class="form-control" />
+        <span asp-validation-for="GioiTinh" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NgaySinh"></label>
+        <input asp-for="NgaySinh" class="form-control" />
+        <span asp-validation-for="NgaySinh" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Ngành Học</label>
+        <select asp-for="MaNganh" asp-items="ViewBag.NganhHocList" class="form-control"></select>
+    </div>
+
+    <div class="form-group">
+        <label>Ảnh Hiện Tại</label><br />
+        <img src="~/@Model.Hinh" alt="Ảnh sinh viên" style="width: 100px; height: auto;" />
+    </div>
+
+    <div class="form-group">
+        <label>Chọn Ảnh Mới:</label>
+        <input type="file" name="Hinh" class="form-control" />
+    </div>
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary">Lưu</button>
+        <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+    </div>
+</form>

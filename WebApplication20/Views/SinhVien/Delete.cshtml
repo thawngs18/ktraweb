@@ -1,0 +1,27 @@
+﻿@model WebApplication20.Models.SinhVien
+
+@{
+    ViewData["Title"] = "Xóa Sinh Viên";
+}
+
+<h2>Xóa Sinh Viên</h2>
+<h3>Bạn có chắc chắn muốn xóa sinh viên này không?</h3>
+
+<dl class="row">
+    <dt class="col-sm-2">Mã Sinh Viên:</dt>
+    <dd class="col-sm-10">@Model.MaSV</dd>
+
+    <dt class="col-sm-2">Họ Tên:</dt>
+    <dd class="col-sm-10">@Model.HoTen</dd>
+
+    <dt class="col-sm-2">Hình Ảnh:</dt>
+    <dd class="col-sm-10">
+        <img src="~/@Model.Hinh" alt="Ảnh sinh viên" style="width: 150px; height: auto;" />
+    </dd>
+</dl>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" name="id" value="@Model.MaSV" />
+    <input type="submit" value="Xác nhận xóa" class="btn btn-danger" />
+    <a asp-action="Index" class="btn btn-secondary">Hủy</a>
+</form>

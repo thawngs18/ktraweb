@@ -1,0 +1,77 @@
+/* Global Styles */
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+    background: linear-gradient(45deg, #ff0000d6, #000000e0, #feb47b);
+    color: #1b1b1b; /* Strong contrast text */
+    font-family: 'Courier New', Courier, monospace; /* Unique typewriter font */
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 18px;
+    }
+}
+
+body {
+    margin-bottom: 60px;
+    font-family: 'Courier New', Courier, monospace; /* Matching font for consistency */
+    line-height: 1.8; /* Comfortable readability */
+    background: linear-gradient(135deg, #fff8e1, #ffecb3); /* Vibrant and contrasting body gradient */
+}
+
+/* Button Focus Styles */
+.btn:focus,
+.btn:active:focus,
+.btn-link.nav-link:focus,
+.form-control:focus,
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.3rem rgba(0, 0, 0, 0.8), 0 0 0 0.35rem #ff7eb3; /* Dramatic shadow focus */
+    outline: none;
+}
+
+/* Placeholder Styles for Floating Forms */
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
+    color: #ff5252; /* Bold and vibrant placeholder color */
+    text-align: center; /* Center aligned for uniqueness */
+    font-weight: bold; /* Highlighted placeholder */
+}
+
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
+    text-align: left;
+    color: #ff1744; /* Even stronger focus color */
+}
+
+/* Enhance Form Controls */
+.form-control {
+    border-radius: 1rem; /* Highly rounded corners */
+    border: 2px solid #ff5252; /* Bold border for focus */
+    padding: 1rem; /* Spacious control */
+    background: linear-gradient(90deg, #ffffff, #ffe0b2); /* Unique gradient inside controls */
+}
+
+    .form-control:focus {
+        border-color: #ff1744; /* Vivid border on focus */
+        background-color: #ffeeff; /* Distinct background on focus */
+    }
+
+/* Buttons Styling */
+.btn {
+    background: linear-gradient(45deg, #ff5252, #ff1744); /* Vibrant, standout gradient */
+    color: #fff; /* Bold contrast */
+    border: 3px solid #ff8a80; /* Strong border */
+    padding: 1rem 1.5rem; /* Larger buttons */
+    border-radius: 2rem; /* Fully rounded buttons */
+    text-transform: uppercase; /* Distinctive button text */
+    font-weight: bold; /* Strong text appearance */
+    transition: transform 0.3s, box-shadow 0.3s; /* Eye-catching transitions */
+}
+
+    .btn:hover {
+        background: linear-gradient(45deg, #ff1744, #d50000); /* Darker hover effect */
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3); /* Dramatic depth */
+        transform: scale(1.1); /* Noticeable hover size increase */
+    }

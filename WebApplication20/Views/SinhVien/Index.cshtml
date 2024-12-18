@@ -1,0 +1,41 @@
+﻿@model IEnumerable<WebApplication20.Models.SinhVien>
+
+<h2>Danh sách Sinh Viên</h2>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Mã SV</th>
+            <th>Họ Tên</th>
+            <th>Giới Tính</th>
+            <th>Ngày Sinh</th>
+            <th>Ngành Học</th>
+            <th>Hình Ảnh</th>
+            <th>Hành Động</th>
+            <th>Đăng Ký Học Phần</th> <!-- Thêm cột mới -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaSV</td>
+                <td>@item.HoTen</td>
+                <td>@item.GioiTinh</td>
+                <td>@item.NgaySinh.ToShortDateString()</td>
+                <td>@item.NganhHoc.TenNganh</td>
+                <td>
+                    <img src="~/@item.Hinh" alt="Ảnh sinh viên" style="width: 100px; height: auto;" />
+                </td>
+                <td>
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.MaSV }) |
+                    @Html.ActionLink("Chỉnh sửa", "Edit", new { id = item.MaSV }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.MaSV })
+                </td>
+                <td>
+                    @Html.ActionLink("Đăng Ký Học Phần", "ListHP", "HocPhan", new { id = item.MaSV }, new { @class = "btn btn-success btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
